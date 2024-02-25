@@ -5,7 +5,7 @@ import { page } from '../main.js';
 
 export async function getPhotoBySearch(value, currentPage) {
   try {
-    const KEY = '42516413-5d4d39fc32c8318bac1e6503b';
+    const KEY = '42424645-ecd3f1048329df1dec069e6a8';
     const response = await axios.get('https://pixabay.com/api/', {
       params: {
         key: KEY,
@@ -31,7 +31,7 @@ export async function getPhotoBySearch(value, currentPage) {
 export async function fetchMoreImages(value, currentPage) {
   try {
     const params = new URLSearchParams({
-      key: '42516413-5d4d39fc32c8318bac1e6503b',
+      key: '42424645-ecd3f1048329df1dec069e6a8',
       q: value,
       image_type: 'photo',
       orientation: 'horizontal',
