@@ -19,7 +19,7 @@ export async function getPhotoBySearch(value, currentPage) {
     });
 
     if (response.data.total === 0) {
-      throw new Error('Found no images');
+      throw new Error('No images found');
     }
 
     return response.data;
@@ -42,7 +42,7 @@ export async function fetchMoreImages(value, currentPage) {
 
     let images = await axios.get(`https://pixabay.com/app/?${params}`);
     if (images.data.total === 0) {
-      throw new Error('Found no images');
+      throw new Error('No images found');
     }
 
     return images.data;

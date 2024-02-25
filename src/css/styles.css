@@ -4,6 +4,7 @@
   | default @import url()
   |============================
 */
+
 @import url('./reset.css');
 
 :root {
@@ -21,7 +22,6 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
 a {
   text-decoration: none;
   color: inherit;
@@ -34,10 +34,9 @@ a {
 .container {
   font-family: 'Montserrat', sans-serif;
 }
-
 .search-form {
   display: flex;
-  margin: 20px;
+  justify-content: center;
   gap: 8px;
   margin-top: 36px;
 }
@@ -45,11 +44,11 @@ a {
 .input-search {
   display: block;
   border-radius: 4px;
-  border: 1px solid #5f4545;
-  width: 268px;
+  border: 1px solid #808080;
+  width: 272px;
   height: 40px;
   padding-left: 16px;
-  color: #1212ec;
+  color: #2e2f42;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -57,14 +56,14 @@ a {
 
 .input-search:active,
 .input-search:focus {
-  border: 1px solid #17859d;
+  border: 1px solid #4e75ff;
 }
 
 .search-btn {
-  width: 92px;
+  width: 90px;
   border: none;
   border-radius: 8px;
-  background-color: #17859d;
+  background-color: #4e75ff;
   color: #fff;
   font-family: inherit;
   font-size: 16px;
@@ -72,11 +71,11 @@ a {
 }
 
 .search-btn:hover {
-  background-color: #0e7eb7;
+  background-color: #5e81ff;
 }
 
 .loader {
-  margin: 20px;
+  text-align: center;
   padding-top: 32px;
   font-size: 16px;
   line-height: 24px;
@@ -85,7 +84,7 @@ a {
 }
 
 .gallery {
-  border: 1px solid #b98f8f;
+  border: 1px solid #808080;
   margin: 15px;
 }
 
