@@ -89,8 +89,8 @@ function endOfCollection() {
     iziToast.show({
       message: `❌ "Sorry, you have reached the end of your search results."`,
       color: 'red',
-      position: 'topRight',
-      maxWidth: '400px',
+      position: 'bottomRight',
+      maxWidth: '320px',
     });
   }
 }
