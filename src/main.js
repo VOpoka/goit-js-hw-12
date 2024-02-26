@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   async function onSubmit(e) {
     e.preventDefault();
     showLoader();
+    hideMoreLoadBtn();
     galleryEl.innerHTML = '';
     page = 1;
     value = formElem.querySelector('.input-search').value;
@@ -30,11 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = await getPhotoBySearch(value, page);
       renderImages(data.hits);
       maxPage = Math.ceil(data.totalHits / 15);
+      checkBtnVisibleStatus();
     } catch (error) {
       renderError(error);
     } finally {
       hideLoader();
-      checkBtnVisibleStatus();
     }
   }
 });
