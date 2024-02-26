@@ -4,7 +4,6 @@ import 'izitoast/dist/css/iziToast.min.css';
 import { renderImages } from './js/render-functions.js';
 import { getPhotoBySearch } from './js/pixabay-api.js';
 import { renderMoreImages } from './js/render-functions.js';
-import { fetchMoreImages } from './js/pixabay-api.js';
 
 const formElem = document.querySelector('.search-form');
 const galleryEl = document.querySelector('.gallery-o');
@@ -66,12 +65,12 @@ function hideLoader2() {
 }
 
 loadMoreBtn.addEventListener('click', async () => {
+  page += 1;
   showLoader2();
   try {
-    const images = await fetchMoreImages(value, page);
+    const images = await getPhotoBySearch(value, page);
 
     renderMoreImages(images);
-    page += 1;
 
     if (page > 1) {
       hideLoader2();
@@ -81,6 +80,19 @@ loadMoreBtn.addEventListener('click', async () => {
     console.log(error);
   }
 });
+
+function endOfCollection() {
+  if (page === maxPage) {
+    hideLoader2();
+    checkBtnVisibleStatus();
+    iziToast.show({
+      message: `❌ "Sorry, you have reached the end of your search results."`,
+      color: 'red',
+      position: 'topRight',
+      maxWidth: '400px',
+    });
+  }
+}
 
 function showMoreLoadBtn() {
   loadMoreBtn.classList.remove('hidden');
