@@ -93,6 +93,7 @@ function endOfCollection() {
     });
   }
 }
+loadMoreBtn.addEventListener('click', endOfCollection);
 
 function showMoreLoadBtn() {
   loadMoreBtn.classList.remove('hidden');
