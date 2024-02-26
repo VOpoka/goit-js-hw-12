@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function renderError(error) {
   galleryEl.innerHTML = '';
   iziToast.show({
-    message: `❌ "${error}". Please try again!`,
+    message: `❌ "${error}" Please try again!`,
     color: 'red',
     position: 'topRight',
     maxWidth: '400px',
