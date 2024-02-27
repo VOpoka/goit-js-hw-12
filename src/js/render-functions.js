@@ -3,7 +3,6 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const galleryEl = document.querySelector('.gallery-o');
 const formElem = document.querySelector('.search-form');
-const lightbox = new SimpleLightbox('.gallery-o');
 
 const options = {
   captions: true,
@@ -13,6 +12,9 @@ const options = {
   captionPosition: 'bottom',
   animation: 250,
 };
+
+const lightbox = new SimpleLightbox('.gallery-o a', options);
+
 export function renderImages(array) {
   const markup = array
     .map(
@@ -43,8 +45,6 @@ export function renderImages(array) {
     .join('');
   galleryEl.innerHTML = markup;
 
-  const lightbox = new SimpleLightbox('.gallery-o a', options);
-  lightbox.on('show.simplelightbox');
   lightbox.refresh();
   formElem.reset();
 }
@@ -79,8 +79,7 @@ export function renderMoreImages(images) {
     )
     .join('');
   galleryEl.insertAdjacentHTML('beforeend', markup);
-  const lightbox = new SimpleLightbox('.gallery-o a', options);
-  lightbox.on('show.simplelightbox');
+
   lightbox.refresh();
   formElem.reset();
 
